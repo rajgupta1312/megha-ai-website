@@ -1,0 +1,249 @@
+/* ===============================
+   GLOBAL FIX
+================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ===============================
+   PAGE
+================================= */
+
+.resources-page { 
+  background: #F4F5FC;
+  padding: 60px 40px;
+  min-height: 100vh;
+  font-family: "Georgia", serif;
+}
+
+.resources-title {
+  text-align: center;
+  font-size: 40px;
+  color: #6D7BC8;
+  margin-bottom: 60px;
+}
+
+/* ===============================
+   GRID
+================================= */
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+/* ===============================
+   CARD WRAPPER
+================================= */
+
+.blog-card {
+  perspective: 1200px;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Remove old background + overflow from blog-card */
+/* DO NOT use overflow hidden here */
+
+/* ===============================
+   INNER FLIP CONTAINER
+================================= */
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.blog-card:hover .card-inner {
+  transform: rotateY(180deg) scale(1.04);
+}
+
+/* ===============================
+   FRONT + BACK SHARED
+================================= */
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  min-height: 450px;
+  border-radius: 25px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===============================
+   FRONT SIDE
+================================= */
+
+.card-front {
+  background: white;
+  box-shadow: 0 15px 40px rgba(109, 123, 200, 0.2);
+  overflow: hidden;
+}
+
+.blog-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.blog-card:hover .card-front img {
+  transform: scale(1.05);
+}
+
+.blog-content {
+  padding: 25px;
+}
+
+.blog-date {
+  font-size: 14px;
+  color: #8797EE;
+  margin-bottom: 10px;
+}
+
+.blog-content h3 {
+  font-size: 18px;
+  color: #2f355c;
+  line-height: 1.4;
+  transition: 0.3s ease;
+}
+
+.blog-card:hover h3 {
+  color: #6D7BC8;
+}
+
+/* ===============================
+   BACK SIDE
+================================= */
+
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #6D7BC8, #8797EE);
+  color: white;
+  padding: 30px;
+  justify-content: space-between;
+  box-shadow: 0 15px 40px rgba(109, 123, 200, 0.3);
+}
+
+/* Prevent content clipping */
+.preview-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.preview-text {
+  font-size: 16px;
+  line-height: 1.6;
+  width: 100%;
+}
+
+.read-more {
+  font-weight: bold;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover .read-more {
+  transform: translateX(8px);
+}
+
+/* ===============================
+   LINK RESET
+================================= */
+
+.blog-link {
+  text-decoration: none;
+}
+
+/* ===============================
+   FOOTER
+================================= */
+
+.footer {
+  background: #D5D8F3;
+  padding: 60px 80px;
+  display: flex;
+  font-size: 25px;
+  justify-content: space-between;
+  margin-top: 100px;
+  border-top: 3px solid #6D7BC8;
+  animation: fadeInFooter 1s ease-in-out;
+}
+
+.footer-left {
+  max-width: 300px;
+}
+
+.footer-logo {
+  height: 65px;
+  margin-bottom: 20px;
+}
+
+.footer h4 {
+  margin-bottom: 15px;
+  color: #6D7BC8;
+}
+
+.footer p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #2f355c;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.footer p:hover {
+  color: #8797EE;
+}
+
+.social-icons img {
+  width: 30px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.bottom-text {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #6D7BC8;
+}
+
+@keyframes fadeInFooter {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.footer-link {
+  display: block;
+  font-size: 15px;
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.footer-link:hover {
+  color: #2563eb;
+}

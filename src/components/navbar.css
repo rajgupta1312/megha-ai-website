@@ -1,0 +1,115 @@
+.nav {
+  background: #D5D8F3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  box-shadow: 0 4px 20px rgba(109, 123, 200, 0.15);
+}
+
+/* ---------------- LOGO ---------------- */
+.logo img {
+  height: 60px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* ---------------- NAV LINKS ---------------- */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: #2f355c;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 25px;
+  padding-bottom: 5px;
+  transition: 0.3s ease;
+}
+
+/* underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #8797EE;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #6D7BC8;
+}
+
+.active {
+  color: #6D7BC8;
+}
+
+/* ---------------- SEARCH BAR ---------------- */
+.nav-search {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.search-input {
+  width: 170px;              /* 👈 controlled size */
+  height: 34px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #b8c0ff;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.search-input:focus {
+  border-color: #6D7BC8;
+  box-shadow: 0 0 6px rgba(109, 123, 200, 0.3);
+}
+/* ---------------- SEARCH WITH ICON ---------------- */
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 14px;
+  color: #6D7BC8;
+}
+
+.search-input {
+  width: 190px;
+  height: 36px;
+  padding: 6px 14px 6px 34px; /* 👈 left padding for icon */
+  border-radius: 20px;
+  border: 1px solid #b8c0ff;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.search-input:focus {
+  border-color: #6D7BC8;
+  box-shadow: 0 0 6px rgba(109, 123, 200, 0.3);
+}
